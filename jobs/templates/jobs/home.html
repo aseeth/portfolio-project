@@ -1,14 +1,16 @@
 <!doctype html>
 <html lang="en">
+  
   <head>
+    {% load static %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
-    <title>Album example · Bootstrap</title>
+    <title>Aseeth_new_project</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
+    
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -46,7 +48,7 @@
   <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">ASEETH NANI</a>
+            <a class="navbar-brand" href="{% url 'home' %}">ASEETH NANI</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -57,8 +59,12 @@
                   <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
+                  <a class="nav-link active" href="{% static 'Aseeth_Resume501.pdf' %}">Resume</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href='{% url 'allblogs' %}'>Blog</a>
+                </li>
+
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Dropdown
@@ -90,8 +96,8 @@
       <p class="lead text-muted">Hey, this the first django project to use bootstrap....!!</p>
       <p>
         <a href="mailto:aseeth.b@gmail.com" class="btn btn-primary my-2">Email Me</a>
-       
       </p>
+      <img src="{% static 'rk_beach.jpg' %}" height="200" width="200" />
     </div>
   </section>
 
@@ -103,7 +109,7 @@
         {% for job in jobs.all %}
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <img class="bd-placeholder-img card-img-top" src="{{ job.image.url }}" />
+            <img class="bd-placeholder-img card-img-top" src="{{ job.image.url }}" height="400" width="4000"/>
             <div class="card-body">
               <p class="card-text">{{ job.summary }}</p>
             </div>
